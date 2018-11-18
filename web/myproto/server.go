@@ -6,9 +6,9 @@ import (
 	"net"
 
 	"github.com/IhorBondartsov/datasaver/entity"
-
 	"github.com/IhorBondartsov/datasaver/database"
 	"github.com/IhorBondartsov/datasaver/web/myproto/pb"
+	
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 )
@@ -35,7 +35,8 @@ type server struct {
 
 // Start - start work server via TCP
 func (s *server) Start() error {
-	// create a listener on TCP port 7777
+	// create a listener on TCP port 
+	
 	lis, err := net.Listen("tcp", fmt.Sprintf(":%s", s.Port))
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)

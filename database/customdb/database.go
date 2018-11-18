@@ -2,9 +2,10 @@ package customdb
 
 import (
 	"fmt"
+	"sync"
+
 	"github.com/IhorBondartsov/datasaver/database"
 	"github.com/IhorBondartsov/datasaver/entity"
-	"sync"
 )
 
 func NewDB() database.DataBase {

@@ -2,14 +2,15 @@ package jsonrpcserver
 
 import (
 	"fmt"
-	"github.com/IhorBondartsov/datasaver/entity"
-	"github.com/IhorBondartsov/datasaver/server/api"
+	"net/http"
 
+	"github.com/IhorBondartsov/datasaver/entity"
+	"github.com/IhorBondartsov/datasaver/web/api"
 	"github.com/IhorBondartsov/datasaver/database"
+	
 	"github.com/gorilla/mux"
 	"github.com/gorilla/rpc/v2"
 	"github.com/gorilla/rpc/v2/json2"
-	"net/http"
 )
 
 type CfgAPI struct {
@@ -28,8 +29,8 @@ type API struct {
 	db   database.DataBase
 }
 
-func (a *API) Echo(r *http.Request, args *api.EchoReq, res *api.EchoResp) error {
-	fmt.Println("Echo")
+func (a *API) SayHello(r *http.Request, args *api.EchoReq, res *api.EchoResp) error {
+	fmt.Println("SayHello")
 	res.Message = "asd"
 	return nil
 }
