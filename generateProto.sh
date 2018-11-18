@@ -1,0 +1,1 @@
+echo `protoc --go_out=plugins=grpc:./web/myproto/pb protofile/personData.proto`

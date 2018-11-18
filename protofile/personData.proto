@@ -1,0 +1,25 @@
+syntax = "proto3";
+package pb;
+
+
+message PersonData {
+    int32 ID = 1;
+    string Name = 2;
+    string Email = 3;
+    string MobileNumber = 4;
+}
+message Nothing {
+    bool dummy = 1;
+}
+
+message PingMessage {
+    string greeting = 1;
+  }
+
+service CSVSender{
+    rpc Save(PersonData) returns (Nothing) {}
+    rpc Print(Nothing) returns (Nothing) {}
+    rpc SayHello(PingMessage) returns (PingMessage) {}
+}   
+
+// protoc --go_out=plugins=grpc:./../web/myproto/pb ./personData.proto
