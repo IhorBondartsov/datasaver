@@ -3,7 +3,15 @@ version: "3.1"
 services: 
   datasaver:
     build: ./
+    expose:
+      - 1812
     ports: 
       - 1812:1812
+    restart: always
     volumes: 
       - ./log:/log
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:1812/"]
+        interval: 30s
+        timeout: 5s
+        retries: 5
