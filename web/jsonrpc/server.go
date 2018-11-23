@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"net/http"
 
+	"github.com/IhorBondartsov/datasaver/database"
 	"github.com/IhorBondartsov/datasaver/entity"
 	"github.com/IhorBondartsov/datasaver/web/api"
-	"github.com/IhorBondartsov/datasaver/database"
-	
+
 	"github.com/gorilla/mux"
 	"github.com/gorilla/rpc/v2"
 	"github.com/gorilla/rpc/v2/json2"

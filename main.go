@@ -1,12 +1,14 @@
 package main
 
 import (
+	"fmt"
 	"github.com/IhorBondartsov/datasaver/cfg"
 	"github.com/IhorBondartsov/datasaver/database/customdb"
 	"github.com/IhorBondartsov/datasaver/web/myproto"
 )
 
 func main() {
+	fmt.Println(greeating)
 	cfg := myproto.GRPCServerCfg{
 		Port: cfg.PORT,
 		DB:   customdb.NewDB(),
@@ -15,6 +17,24 @@ func main() {
 	x := myproto.NewServer(cfg)
 	x.Start()
 }
+
+var greeating = `
+HELLO! MY DEAR FRIEND!!
+___________________________________
+ ∧__∧
+/ . .\
+( >ω<)
+(っ▄︻▇〓▄︻┻┳═*  
+(     )    /\💥
+...................................
+Start server ...`
+
+var parting = `
+
+`
+
+
+
 
 // MAIN FOR JSON RPC
 // func main(){
